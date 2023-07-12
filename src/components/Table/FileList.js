@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Table } from 'react-bootstrap';
-import { fetchFile } from '../actions.js';
+import { fetchFile } from '../../state/actions/actions.js';
 
 const FileList = ({ files }) => {
   const [fileName, setFileName] = useState('');

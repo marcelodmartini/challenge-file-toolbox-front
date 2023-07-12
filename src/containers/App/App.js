@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchFiles } from './actions';
-import FileList from './components/FileList';
+import { fetchFiles } from '../../state/actions/actions';
+import FileList from '../../components/Table/FileList';
 
 const App = () => {
   const files = useSelector(state => state.files);

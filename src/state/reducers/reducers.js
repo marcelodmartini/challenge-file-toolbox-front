@@ -1,4 +1,4 @@
-import { FETCH_FILES_SUCCESS,  FETCH_FILE_SUCCESS} from './actions';
+import { FETCH_FILES_SUCCESS,  FETCH_FILE_SUCCESS} from '../actions/actions';
 
 const initialState = {
   files: [],
