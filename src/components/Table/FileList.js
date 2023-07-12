@@ -25,6 +25,22 @@ const FileList = ({ files }) => {
       setFileName('');
     }
   };
+
+  const RenderFiles = () => {
+    return files.map((file) => (
+      <React.Fragment key={file.file}>
+        {file.lines.map((line, index) => (
+          <tr key={`${file.file}-${index}`}>
+            <td>{file.file}</td>
+            <td>{line.text}</td>
+            <td>{line.number}</td>
+            <td>{line.hex}</td>
+          </tr>
+        ))}
+      </React.Fragment>
+    ));
+  };
+
   return (
         <div>
           <h2 className="titulo">React Test App</h2>
@@ -40,18 +56,7 @@ const FileList = ({ files }) => {
               </tr>
             </thead>
             <tbody>
-              {files.map((file) => (
-                <React.Fragment key={file.file}>
-                  {file.lines.map((line, index) => (
-                    <tr key={`${file.file}-${index}`}>
-                      <td>{file.file}</td>
-                      <td>{line.text}</td>
-                      <td>{line.number}</td>
-                      <td>{line.hex}</td>
-                    </tr>
-                  ))}
-                </React.Fragment>
-              ))}
+              <RenderFiles />
             </tbody>
           </Table>
         </div>

@@ -20,6 +20,7 @@ nvm install v14.0.0
 Para seleccionarlo la version concreta invocar:  
 nvm use v14.0.0
 
+We can use the .dotenv file to set the context variables
 Here is an example of a folder structure for a React + React Bootstrap
 project using the Clean Code and Hexagonal architecture:
 
