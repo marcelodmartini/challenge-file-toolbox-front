@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { API_ENDPOINTS, BASE_URL } from '../../services/api';
+
 
 export const FETCH_FILES_SUCCESS = 'FETCH_FILES_SUCCESS';
 export const FETCH_FILE_SUCCESS = 'FETCH_FILE_SUCCESS';
@@ -15,7 +17,7 @@ export const fetchFileSuccess = file => ({
 
 export const fetchFiles = () => {
   return dispatch => {
-    return axios.get('http://localhost:3000/files/data')
+    return axios.get(`${BASE_URL}${API_ENDPOINTS.FILES}`)
       .then(response => {
         dispatch(fetchFilesSuccess(response.data));
       })
@@ -27,7 +29,7 @@ export const fetchFiles = () => {
 
 export const fetchFile = (fileName) => {
     return dispatch => {
-      return axios.get(`http://localhost:3000/files/data?fileName=${fileName}`)
+      return axios.get(`${BASE_URL}${API_ENDPOINTS.FILE_BY_NAME(fileName)}`)
         .then(response => {
           dispatch(fetchFileSuccess(response.data));
         })

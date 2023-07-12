@@ -1,5 +1,7 @@
-import axios from 'axios';
+//We can use the .dotenv file to set the context variables
+export const BASE_URL = 'http://localhost:3000';
 
-axios.defaults.baseURL = 'http://localhost:3000'; // Replace with your API base URL
-
-export default axios;
+export const API_ENDPOINTS = {
+  FILES: '/files/data',
+  FILE_BY_NAME: (fileName) => `/files/data?fileName=${fileName}`,
+};
