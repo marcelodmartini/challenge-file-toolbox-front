@@ -1,24 +1,7 @@
-npm init -y  
-npm install react react-dom  
-npm install redux react-redux  
-npm install axios  
-npm install webpack webpack-cli webpack-dev-server  
-npm install babel-loader `babel/core `babel/preset-env
-`babel/preset-react
-npm install jest
-npm install react-bootstrap bootstrap
-npm install --save redux-thunk
-npm install style-loader css-loader --save
-npm install --save-dev webpack webpack-cli babel-loader `babel/core
-`babel/preset-env `babel/preset-react jest babel-jest
-react-test-renderer  
-npm i redux-mock-store
-
-En caso de no tenerlo instalarlo con:  
-nvm install v14.0.0
-
-Para seleccionarlo la version concreta invocar:  
-nvm use v14.0.0
+To start the project to start in the root directory and run
+docker compose up
+and enter:
+http://localhost:8000/
 
 We can use the .dotenv file to set the context variables
 Here is an example of a folder structure for a React + React Bootstrap
