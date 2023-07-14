@@ -41,11 +41,15 @@ const FileList = ({ files }) => {
     ));
   };
 
+  const clearFileName = () => {
+    setFileName('');
+  };
+
   return (
         <div>
           <h2 className="titulo">React Test App</h2>
           <input type="text" value={fileName} onChange={handleInputChange} onKeyPress={handleKeyPress} />
-          <button onClick={() => setFileName('')}>Clear</button>
+          <button onClick={clearFileName}>Clear</button>
           <Table striped bordered>
             <thead>
               <tr>
