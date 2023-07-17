@@ -8,11 +8,13 @@ const FileList = ({ files }) => {
   const dispatch = useDispatch();
   const fileData = useSelector((state) => state.fileData);
 
-  useEffect(() => {
-    if (fileName) {
-      dispatch(fetchFile(fileName));
-    }
-  }, [fileName, dispatch]);
+  // The following commented line of code is based on the fact that for each letter that we put in the inputext, that is, 
+  // for each change in the fileName variable, it makes a request to obtain said filename, this generates a request for each letter entered.
+  // useEffect(() => {
+  //   if (fileName) {
+  //     dispatch(fetchFile(fileName));
+  //   }
+  // }, [fileName, dispatch]);
 
 
   const handleInputChange = (e) => {
@@ -42,6 +44,12 @@ const FileList = ({ files }) => {
   };
 
   const clearFileName = () => {
+      dispatch(fetchFile(''));
+      setFileName('');
+  };
+
+  const searchFileName = () => {
+    dispatch(fetchFile(fileName));
     setFileName('');
   };
 
@@ -49,6 +57,7 @@ const FileList = ({ files }) => {
         <div>
           <h2 className="titulo">React Test App</h2>
           <input type="text" value={fileName} onChange={handleInputChange} onKeyPress={handleKeyPress} />
+          <button onClick={searchFileName}>Buscar</button>
           <button onClick={clearFileName}>Clear</button>
           <Table striped bordered>
             <thead>
